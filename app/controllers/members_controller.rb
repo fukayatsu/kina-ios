@@ -4,6 +4,9 @@ class MembersViewController < UITableViewController
     super
     self.navigationItem.title = "Members"
 
+    reload_button = UIBarButtonItem.alloc.initWithTitle("Reload", style: UIBarButtonItemStyleBordered, target:self, action:'reload_members')
+    self.navigationItem.rightBarButtonItem = reload_button
+
     reload_members
   end
 
