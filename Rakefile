@@ -13,3 +13,8 @@ Motion::Project::App.setup do |app|
   app.name = 'Kina'
   app.frameworks += %w(CoreLocation CoreBluetooth)
 end
+
+Motion::SettingsBundle.setup do |app|
+  # A text field. Allows configuration of a string.
+  app.text "Your Name", key: "username", default: ""
+end
