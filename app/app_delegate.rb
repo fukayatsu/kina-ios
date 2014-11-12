@@ -9,6 +9,7 @@ class AppDelegate
 
     @manager = CLLocationManager.new
     @manager.delegate = self
+    @manager.requestAlwaysAuthorization # for ios8
 
     uuid = NSUUID.alloc.initWithUUIDString(UUID)
     @region = CLBeaconRegion.alloc.initWithProximityUUID(uuid, identifier: "club.yurudev.room")
@@ -17,8 +18,6 @@ class AppDelegate
     @region.notifyEntryStateOnDisplay = false
 
     @manager.startMonitoringForRegion(@region)
-
-    p username
 
     true
   end
